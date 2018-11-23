@@ -1,0 +1,29 @@
+{
+  "name": "@dieschittigs/generator-bundle",
+  "version": "0.1.0",
+  "description": "Generate new Contao bundles in the blink of an eye",
+  "files": [
+    "app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DieSchittigs/yeoman-bundle.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "yeoman",
+    "yo",
+    "contao",
+    "generator",
+    "bundle"
+  ],
+  "author": "Christopher Mühl <christopher@dieschittigs.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DieSchittigs/yeoman-bundle/issues"
+  },
+  "homepage": "https://github.com/DieSchittigs/yeoman-bundle#readme",
+  "dependencies": {
+    "yeoman-generator": "^3.1.1"
+  }
+}
