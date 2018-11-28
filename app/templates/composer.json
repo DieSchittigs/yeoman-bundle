@@ -1,0 +1,30 @@
+{
+    "name": "<%= composername %>",<%- description %>
+    "type": "contao-bundle",
+    "require": {
+        "php": "^7.1",
+        "contao/core-bundle": "^4.4"
+    },
+    "authors": [
+        {
+            "name": "Christopher Mühl",
+            "email": "christopher@dieschittigs.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "<%= namespace %>\\" : "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/"
+        ]
+    },
+    "extra": {
+        "contao-manager-plugin": "<%= namespace %>\\ContaoManager\\Plugin"
+    }
+}
