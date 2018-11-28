@@ -23,6 +23,16 @@ module.exports = class extends Generator {
             name    : 'namespace',
             message : 'PSR-4 namespace',
             default : 'Example\\Bundle',
+        }, {
+            type    : 'input',
+            name    : 'name',
+            message : 'Your name (this will only be used for the composer author field)',
+            store   : true,
+        }, {
+            type    : 'input',
+            name    : 'email',
+            message : 'Your e-mail address (this will only be used for the composer author field)',
+            store   : true,
         }]);
 
         this.answers.namespace = this.answers.namespace.replace(/\\+$/, ''); // Trim trailing backslashes 
@@ -33,6 +43,11 @@ module.exports = class extends Generator {
         context.namespace = context.namespace.replace(/\\/g, '\\\\');
         context.description = context.description ? `\n    "description": "${context.description}",` : '';
 
+        let authors = '';
+        if (context.name) authors = `\n            "name": "${context.name}"`;
+        if (context.email) authors += (context.name ? ',' : '') + `\n            "email": "${context.email}"`;
+        context.authors = authors ? `\n    "authors: [\n        {${authors}\n        }\n    ],` : '';
+        
         this.fs.copyTpl(
             this.templatePath('composer.json'),
             this.destinationPath('composer.json'),

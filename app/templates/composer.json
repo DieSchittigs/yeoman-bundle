@@ -4,13 +4,7 @@
     "require": {
         "php": "^7.1",
         "contao/core-bundle": "^4.4"
-    },
-    "authors": [
-        {
-            "name": "Christopher Mühl",
-            "email": "christopher@dieschittigs.de"
-        }
-    ],
+    },<%- authors %>
     "autoload": {
         "psr-4": {
             "<%= namespace %>\\" : "src/"
